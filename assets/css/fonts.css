@@ -2,6 +2,7 @@
 @font-face {
   font-display: swap;
   font-family: 'Fira Sans';
+  /* font-family: "iA Writer Mono S","Courier New",monospace; */
   font-style: normal;
   font-weight: 400;
   src: url('../fonts/fira-sans-v10-latin-regular.eot'); /* IE9 Compat Modes */

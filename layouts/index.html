@@ -7,10 +7,12 @@
 			
 			<main class="list">
 				<div class="site-description">
-					{{- if isset .Site.Params "subtitle" -}}
-					<p>{{ .Site.Params.Subtitle | markdownify }}</p>
-					{{- end -}}
+					<h1>{{ .Site.Params.description.title }}</h1>
+					<p>{{ .Site.Params.description.intro }}</p>
 				</div>
+				
+				{{ template "partials/newsletter.html" . }}
+
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
