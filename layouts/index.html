@@ -7,10 +7,13 @@
 			
 			<main class="list">
 				<div class="site-description">
-					<h1>{{ .Site.Params.description.title }}</h1>
+					{{ $asset := resources.Get "/bjoern.jpg" }}
+					{{ $img := $asset.Fit "100x100" }}
+					<h1 style="margin-bottom: 50px;"><img src="{{ $img.RelPermalink }}" style="border-radius: 50%; border-width: 0px; width: 100px; margin-bottom: -50px;" alt="Bjoern">{{ .Site.Params.description.title }}</h1>
 					<p>{{ .Site.Params.description.intro }}</p>
 				</div>
 				
+
 				{{ template "partials/newsletter.html" . }}
 
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
