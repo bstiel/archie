@@ -19,8 +19,9 @@ hr {
   border-top: 3px dotted blue;
 }
 code {
-  background-color: lightblue;
-  color: black;
+  /* background-color: lightblue; */
+  background-color: #272822;
+  /* color: grey; */
   text-decoration: bold;
   padding: 0.1em 0.2em;
 }
