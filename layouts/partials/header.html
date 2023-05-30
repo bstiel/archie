@@ -1,13 +1,17 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	{{ if .Params.tags -}}
+	<meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", "}}{{ end }}" />
+	{{ end -}}
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
-	<title>{{ $siteTitle }} | Home </title>
+	<title>{{ $siteTitle }}</title>
 	{{- else -}}
 	<title>{{ $title }}</title>
 	{{- end -}}
+
 
 	{{- if isset .Site.Params "favicon" -}}
 	<link rel="icon" type="image/png" href={{ .Site.Params.favicon }} />
