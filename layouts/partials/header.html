@@ -8,8 +8,8 @@
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
 	<title>{{ $siteTitle }}{{- if gt .Paginator.PageNumber 1 }} | Page {{ .Paginator.PageNumber }}{{- end -}}</title>
-	{{- else -}}
-	<title>{{ $title }}</title>
+	{{- else -}}	
+	<title>	{{- if .Params.seoTitle -}}{{ .Params.seoTitle }}{{- else -}}{{ $title }}{{- end -}}</title>
 	{{- end -}}
 
 
