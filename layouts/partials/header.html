@@ -7,7 +7,7 @@
 	{{ $title := ( .Title ) }}
 	{{- $siteTitle := ( .Site.Title ) -}}
 	{{- if .IsHome -}}
-	<title>{{ $siteTitle }}</title>
+	<title>{{ $siteTitle }}{{- if gt .Paginator.PageNumber 1 }} | Page {{ .Paginator.PageNumber }}{{- end -}}</title>
 	{{- else -}}
 	<title>{{ $title }}</title>
 	{{- end -}}
