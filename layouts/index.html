@@ -9,8 +9,8 @@
 				<div class="site-description">
 					{{ $asset := resources.Get "/bjoern.jpg" }}
 					{{ $img := $asset.Fit "100x100" }}
-					<div style="margin-bottom: 25px;"><img src="{{ $img.RelPermalink }}" style="border-radius: 50%; border-width: 0px; width: 50px; margin-bottom: -20px; margin-right: 10px;" alt="Bjoern">{{ .Site.Params.description.title }}</div>
-					<p>{{ .Site.Params.description.intro }}</p>
+					<div style="margin-bottom: 25px;"><img src="{{ $img.RelPermalink }}" style="border-radius: 50%; border-width: 0px; width: 50px; margin-bottom: -20px; margin-right: 10px;" alt="Bjoern">{{ .Site.Params.pageIntro.header }}</div>
+					<p>{{ .Site.Params.pageIntro.body }}</p>
 				</div>
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
