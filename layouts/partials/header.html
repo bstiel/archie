@@ -30,7 +30,7 @@
 	{{- end -}}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.SiteDescription }}{{ else if .IsPage}}{{ .Summary }}{{ end }}" />
+	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.SiteDescription }}{{ else if .IsPage}}{{ .Description }}{{ end }}" />
 
 	<meta property="og:image" content="{{ .Site.Params.og_image }}"/>
 	{{ with .OutputFormats.Get "rss" -}}
